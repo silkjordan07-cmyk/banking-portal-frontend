@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-navy-900 antialiased;
+    background: #eef4fa;
+  }
+}
+
+@layer utilities {
+  .portal-landscape {
+    background:
+      linear-gradient(180deg, rgba(236, 246, 252, 0.97) 0%, rgba(226, 240, 247, 0.78) 43%, rgba(205, 220, 205, 0.68) 66%, rgba(191, 205, 191, 0.8) 100%),
+      radial-gradient(ellipse at 50% 68%, rgba(66, 118, 153, 0.45) 0 10%, transparent 31%),
+      linear-gradient(110deg, #c9dbe9 0%, #edf5fa 44%, #b7cbd4 100%);
+    background-attachment: fixed;
+  }
+
+  .login-landscape {
+    background:
+      linear-gradient(140deg, rgba(12, 31, 76, 0.95) 0%, rgba(44, 93, 139, 0.22) 38%, rgba(212, 185, 136, 0.35) 100%),
+      radial-gradient(ellipse at 65% 82%, rgba(99, 126, 80, 0.7) 0 16%, transparent 44%),
+      #d9e4ea;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-5 py-2.5 bg-blue-600 text-white font-semibold rounded-md transition-all hover:bg-blue-700 hover:shadow-lg active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2;
+  }
+
+  .btn-navy {
+    @apply inline-flex items-center justify-center px-5 py-2.5 bg-navy-800 text-white font-semibold rounded-md transition-all hover:bg-navy-700 hover:shadow-lg active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-navy-600 focus:ring-offset-2;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2.5 border border-navy-200 rounded-md text-navy-900 placeholder-navy-300 bg-white transition-all focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400;
+  }
+}
