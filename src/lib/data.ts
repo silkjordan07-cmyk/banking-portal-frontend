@@ -139,7 +139,7 @@ export const accountDetails: AccountDetail[] = [
 ];
 
 export const transactions: Transaction[] = [
-  { id: '7', date: 'Oct 5', description: 'Refund', status: 'Posted', account: 'NOW ACCT 5389', amount: 50000.0 }, // Added Refund transaction
+  { id: '7', date: 'Oct 5', description: 'Payment For Goods And Services', status: 'Posted', account: 'NOW ACCT 5389', amount: 50000.0 }, // Added Refund transaction
   { id: '6', date: 'Oct 5', description: 'Refund from CNB Main branch', status: 'Posted', account: 'NOW ACCT 5389', amount: 10000.0 },
   { id: '1', date: 'Oct 2', description: 'KO STORAGE NAPLE 4305629793 ACH EOD PR...', status: 'Pending', account: 'NOW ACCT 5389', amount: -261.0 },
   { id: '2', date: 'Oct 2', description: 'DDA PAY FIRST ITEM', status: 'Posted', account: 'NOW ACCT 5389', amount: -5500.0 },
