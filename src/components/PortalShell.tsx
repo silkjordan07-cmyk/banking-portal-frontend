@@ -26,12 +26,12 @@ interface PortalShellProps {
 
 const sidebarItems = [
   { icon: LayoutDashboard, label: 'Dashboard', view: 'dashboard' as View },
-  { icon: MessageSquare, label: 'Messages', view: 'dashboard' as View, badge: 2 },
+  { icon: MessageSquare, label: 'Messages', view: 'messages' as View, badge: 2 },
   { icon: Wallet, label: 'Accounts', view: 'accounts' as View },
   { icon: ArrowLeftRight, label: 'Transfers', view: 'transfers' as View },
   { icon: ScanLine, label: 'Remote deposits', view: 'dashboard' as View },
-  { icon: Receipt, label: 'Bill pay', view: 'dashboard' as View },
-  { icon: CreditCard, label: 'Pay a Loan', view: 'dashboard' as View },
+  { icon: Receipt, label: 'Bill pay', view: 'bill-pay' as View },
+  { icon: CreditCard, label: 'Pay a Loan', view: 'pay-loan' as View },
   { icon: Plus, label: 'Apply for a Personal Loan', view: 'dashboard' as View },
   { icon: Home, label: 'Apply for a Mortgage', view: 'dashboard' as View },
   { icon: LifeBuoy, label: 'Support', view: 'dashboard' as View },

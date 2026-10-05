@@ -14,13 +14,12 @@ export default function LoginPage({ onNavigate }: LoginPageProps) {
 
   return (
     <div className="min-h-screen flex flex-col login-landscape">
-      <div className="flex-1 flex items-center justify-center px-4 py-10 sm:py-16">
-        <div className="w-full max-w-[430px] animate-fade-in-up">
-          <div className="flex justify-start mb-4 pl-2">
-            <CnbLogo size="lg" />
-          </div>
-
-          <div className="bg-white/95 backdrop-blur-sm rounded-sm shadow-2xl border border-white/70 overflow-hidden">
+      <div className="flex-1 flex items-center justify-center px-4 py-10 sm:py-16 lg:justify-end lg:pr-[12%]">
+        <div className="w-full max-w-[370px] animate-fade-in-up">
+          <div className="bg-white/95 backdrop-blur-sm rounded-md shadow-2xl border border-white/70 overflow-hidden">
+            <div className="flex justify-center px-6 pt-6">
+              <CnbLogo size="lg" />
+            </div>
             <form
               onSubmit={(event) => {
                 event.preventDefault();
@@ -38,7 +37,7 @@ export default function LoginPage({ onNavigate }: LoginPageProps) {
                       id="username"
                       value={username}
                       onChange={(event) => setUsername(event.target.value)}
-                      className="w-full border-0 border-b border-navy-300 bg-transparent px-0 py-2 text-base text-navy-800 outline-none focus:border-blue-600 focus:ring-0"
+                      className="w-full rounded-sm border border-navy-200 bg-white px-3 py-2 text-sm text-navy-800 outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-200"
                     />
                   </div>
                   <div>
@@ -52,7 +51,7 @@ export default function LoginPage({ onNavigate }: LoginPageProps) {
                         type={showPassword ? 'text' : 'password'}
                         value={password}
                         onChange={(event) => setPassword(event.target.value)}
-                        className="w-full border-0 border-b border-navy-300 bg-transparent py-2 pl-7 pr-8 text-base text-navy-800 outline-none focus:border-blue-600 focus:ring-0"
+                        className="w-full rounded-sm border border-navy-200 bg-white py-2 pl-8 pr-8 text-sm text-navy-800 outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-200"
                       />
                       <button
                         type="button"

@@ -23,8 +23,8 @@ const quickActions = [
   { icon: ArrowLeftRight, label: 'Transfer', view: 'transfers' as View },
   { icon: Users, label: 'Pay a person' },
   { icon: Receipt, label: 'Pay a bill' },
-  { icon: MessageSquare, label: 'Message' },
-  { icon: FileText, label: 'Documents' },
+  { icon: MessageSquare, label: 'Message', view: 'messages' as View },
+  { icon: FileText, label: 'Documents', view: 'documents' as View }
 ];
 
 export default function DashboardPage({ onNavigate, onOpenAccount }: DashboardPageProps) {

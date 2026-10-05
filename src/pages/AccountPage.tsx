@@ -40,7 +40,7 @@ export default function AccountPage({ accountId, onNavigate }: AccountPageProps)
 
             <div className="space-y-4">
               <div className="flex flex-wrap gap-2">
-                {actions.map((action) => <button key={action.label} className="flex h-[58px] min-w-[62px] flex-1 flex-col items-center justify-center gap-1 rounded-md bg-[#0965a3] px-1 text-[8px] font-semibold text-white shadow-sm hover:bg-[#07598f]"><action.icon className="h-4 w-4" />{action.label}</button>)}
+                {actions.map((action) => <button key={action.label} onClick={() => { if (action.label === 'Documents') onNavigate('documents'); if (action.label === 'Transfer') onNavigate('transfers'); }} className="flex h-[58px] min-w-[62px] flex-1 flex-col items-center justify-center gap-1 rounded-md bg-[#0965a3] px-1 text-[8px] font-semibold text-white shadow-sm hover:bg-[#07598f]"><action.icon className="h-4 w-4" />{action.label}</button>)}
               </div>
               <section className="rounded-sm bg-white/90 shadow-[0_2px_10px_rgba(37,76,105,0.12)]">
                 <div className="border-b border-navy-100 px-4 py-3"><h2 className="text-sm font-bold text-navy-900">Details</h2></div>

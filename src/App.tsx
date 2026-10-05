@@ -4,6 +4,10 @@ import DashboardPage from '@/pages/DashboardPage';
 import AccountPage from '@/pages/AccountPage';
 import AccountsPage from '@/pages/AccountsPage';
 import TransfersPage from '@/pages/TransfersPage';
+import BillPayPage from '@/pages/BillPayPage';
+import DocumentsPage from '@/pages/DocumentsPage';
+import PayLoanPage from '@/pages/PayLoanPage';
+import MessagesPage from '@/pages/MessagesPage';
 import type { View } from '@/lib/data';
 
 function App() {
@@ -29,6 +33,22 @@ function App() {
 
   if (view === 'transfers') {
     return <TransfersPage onNavigate={handleNavigate} />;
+  }
+
+  if (view === 'bill-pay') {
+    return <BillPayPage onNavigate={handleNavigate} />;
+  }
+
+  if (view === 'documents') {
+    return <DocumentsPage onNavigate={handleNavigate} />;
+  }
+
+  if (view === 'pay-loan') {
+    return <PayLoanPage onNavigate={handleNavigate} />;
+  }
+
+  if (view === 'messages') {
+    return <MessagesPage onNavigate={handleNavigate} />;
   }
 
   return <LoginPage onNavigate={handleNavigate} />;

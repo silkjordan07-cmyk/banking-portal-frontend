@@ -1,4 +1,4 @@
-export type View = 'login' | 'dashboard' | 'accounts' | 'account' | 'transfers';
+export type View = 'login' | 'dashboard' | 'accounts' | 'account' | 'transfers' | 'bill-pay' | 'documents' | 'pay-loan' | 'messages';
 
 export interface Account {
   id: string;
