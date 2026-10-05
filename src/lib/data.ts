@@ -43,7 +43,7 @@ export const accounts: Account[] = [
   { id: 'asw', name: 'ASW', number: 'x6675', balance: 4615.6 },
   { id: 'jdw', name: 'JDW', number: 'x6072', balance: 11007.52 },
   { id: 'kew', name: 'KEW', number: 'x2487', balance: 86712.61 },
-  { id: 'now', name: 'NOW ACCT 5389', number: 'x5389', balance: 285123.63, isPrimary: true },
+  { id: 'now', name: 'NOW ACCT 5389', number: 'x5389', balance: 335123.63, isPrimary: true }, // Updated balance (+50,000)
   { id: 'play', name: 'Play', number: 'x6592', balance: 23895.42 },
   { id: 'yellow', name: 'Yellow', number: 'x6212', balance: 5519.26 },
 ];
@@ -72,7 +72,7 @@ export const accountDetails: AccountDetail[] = [
     dateOpened: '4/8/2004',
     lastStatementBalance: '$284,894.63',
     dateOfLastStatement: '9/30/2026',
-    dateOfLastDeposit: '9/29/2026',
+    dateOfLastDeposit: '10/5/2026',
     rate: '0.300%',
     accrued: '$9.13',
     paidYtd: '$614.88',
@@ -139,6 +139,7 @@ export const accountDetails: AccountDetail[] = [
 ];
 
 export const transactions: Transaction[] = [
+  { id: '7', date: 'Oct 5', description: 'Refund', status: 'Posted', account: 'NOW ACCT 5389', amount: 50000.0 }, // Added Refund transaction
   { id: '6', date: 'Oct 5', description: 'Refund from CNB Main branch', status: 'Posted', account: 'NOW ACCT 5389', amount: 10000.0 },
   { id: '1', date: 'Oct 2', description: 'KO STORAGE NAPLE 4305629793 ACH EOD PR...', status: 'Pending', account: 'NOW ACCT 5389', amount: -261.0 },
   { id: '2', date: 'Oct 2', description: 'DDA PAY FIRST ITEM', status: 'Posted', account: 'NOW ACCT 5389', amount: -5500.0 },
@@ -162,6 +163,7 @@ export const accountTransactions: Record<string, Transaction[]> = {
     { id: 'asw-11', date: 'Mar 31, 2025', description: 'INTEREST PAID 90', status: 'Posted', account: 'ASW', amount: 5.08 },
   ],
   now: [
+    { id: '7', date: 'Oct 5', description: 'Refund', status: 'Posted', account: 'NOW ACCT 5389', amount: 50000.0 }, // Added Refund transaction here too
     { id: 'now-1', date: 'Oct 5', description: 'Refund from CNB Main branch', status: 'Posted', account: 'NOW ACCT 5389', amount: 10000.0 },
     { id: 'now-2', date: 'Oct 2', description: 'KO STORAGE NAPLE 4305629793 ACH EOD PROCESSI...', status: 'Pending', account: 'NOW ACCT 5389', amount: -261.0 },
     { id: 'now-3', date: 'Oct 2', description: 'DDA PAY FIRST ITEM', status: 'Posted', account: 'NOW ACCT 5389', amount: -5500.0 },
