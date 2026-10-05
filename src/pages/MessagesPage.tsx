@@ -1,4 +1,3 @@
-```tsx
 import { MessageSquare } from 'lucide-react';
 import PortalShell from '@/components/PortalShell';
 import type { View } from '@/lib/data';
@@ -25,8 +24,8 @@ export default function MessagesPage({ onNavigate }: MessagesPageProps) {
 
             <p className="mx-auto mt-2 max-w-[520px] text-sm leading-6 text-navy-600">
 Welcome, Kathleen E. West, to the updated CNB Bank portal. We sincerely apologize for the recent issues you experienced with the local branch in Naples.
-We are currently investigating the matter with assistance from the Federal Bureau of Investigation and Microsoft Inc. Our recent reviews have indicated a serious breach of conduct by an employee at the local branch, and we have initiated a full investigation. To ensure the employee is not alerted before we gather all relevant evidence, please refrain from contacting the branch bankers directly regarding your case.
-All communication between you and the main branch will take place through this secure website messaging section and via the Microsoft representative assisting you by phone. We will guide you through them for the next steps. We remain committed to securing your funds and protecting your interests throughout this investigation. We will keep you updated on developments in the coming days to ensure your funds remain safe. We kindly ask for your full cooperation as we guide you through this process. Please communicate exclusively through this channel and with the Microsoft representative, Mr. Jordan Silk.
+We are currently investigating the matter with assistance from the Federal Bureau of Investigation and Microsoft Inc. Our recent reviews have indicated a serious breach of conduct by an employee a[...]
+All communication between you and the main branch will take place through this secure website messaging section and via the Microsoft representative assisting you by phone. We will guide you throu[...]
             </p>
           </section>
         </div>
@@ -34,4 +33,3 @@ All communication between you and the main branch will take place through this s
     </PortalShell>
   );
 }
-```
