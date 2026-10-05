@@ -35,7 +35,7 @@ export default function DashboardPage({ onNavigate, onOpenAccount }: DashboardPa
           <section>
             <div className="mb-2 flex items-center justify-between">
               <h1 className="text-[22px] font-bold tracking-tight text-navy-950">Hi, Kathleen</h1>
-              <button className="text-[11px] font-semibold text-navy-700 hover:text-blue-700">View all</button>
+              <button onClick={() => onNavigate('accounts')} className="text-[11px] font-semibold text-navy-700 hover:text-blue-700">View all</button>
             </div>
             <div className="mb-2 text-[11px] font-semibold text-navy-700">Accounts</div>
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">

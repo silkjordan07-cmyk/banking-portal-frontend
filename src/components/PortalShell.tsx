@@ -27,7 +27,7 @@ interface PortalShellProps {
 const sidebarItems = [
   { icon: LayoutDashboard, label: 'Dashboard', view: 'dashboard' as View },
   { icon: MessageSquare, label: 'Messages', view: 'dashboard' as View, badge: 2 },
-  { icon: Wallet, label: 'Accounts', view: 'dashboard' as View },
+  { icon: Wallet, label: 'Accounts', view: 'accounts' as View },
   { icon: ArrowLeftRight, label: 'Transfers', view: 'transfers' as View },
   { icon: ScanLine, label: 'Remote deposits', view: 'dashboard' as View },
   { icon: Receipt, label: 'Bill pay', view: 'dashboard' as View },

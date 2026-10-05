@@ -2,6 +2,7 @@ import { useState } from 'react';
 import LoginPage from '@/pages/LoginPage';
 import DashboardPage from '@/pages/DashboardPage';
 import AccountPage from '@/pages/AccountPage';
+import AccountsPage from '@/pages/AccountsPage';
 import TransfersPage from '@/pages/TransfersPage';
 import type { View } from '@/lib/data';
 
@@ -16,6 +17,10 @@ function App() {
 
   if (view === 'dashboard') {
     return <DashboardPage onNavigate={handleNavigate} onOpenAccount={(accountId) => { setSelectedAccountId(accountId); handleNavigate('account'); }} />;
+  }
+
+  if (view === 'accounts') {
+    return <AccountsPage onNavigate={handleNavigate} onOpenAccount={(accountId) => { setSelectedAccountId(accountId); handleNavigate('account'); }} />;
   }
 
   if (view === 'account') {

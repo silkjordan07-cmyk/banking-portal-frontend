@@ -1,4 +1,4 @@
-export type View = 'login' | 'dashboard' | 'account' | 'transfers';
+export type View = 'login' | 'dashboard' | 'accounts' | 'account' | 'transfers';
 
 export interface Account {
   id: string;
@@ -49,6 +49,35 @@ export const accounts: Account[] = [
 ];
 
 export const accountDetails: AccountDetail[] = [
+  {
+    accountId: 'asw',
+    accountNumber: '4106675',
+    routingNumber: '111901946',
+    owner: 'KATHLEEN WEST',
+    dateOpened: '5/18/2012',
+    lastStatementBalance: '$4,615.60',
+    dateOfLastStatement: '9/30/2026',
+    dateOfLastDeposit: '5/5/2026',
+    rate: '0.300%',
+    accrued: '$0.15',
+    paidYtd: '$16.86',
+    paidLastYear: '$23.18',
+  },
+  {
+    accountId: 'now',
+    accountNumber: '205389',
+    routingNumber: '111901946',
+    owner: 'KATHLEEN WEST',
+    otherNames: 'ARTHUR S WEST',
+    dateOpened: '4/8/2004',
+    lastStatementBalance: '$284,894.63',
+    dateOfLastStatement: '9/30/2026',
+    dateOfLastDeposit: '9/29/2026',
+    rate: '0.300%',
+    accrued: '$9.13',
+    paidYtd: '$614.88',
+    paidLastYear: '$763.11',
+  },
   {
     accountId: 'kew',
     accountNumber: '4102487',
@@ -119,6 +148,33 @@ export const transactions: Transaction[] = [
 ];
 
 export const accountTransactions: Record<string, Transaction[]> = {
+  asw: [
+    { id: 'asw-1', date: 'Sep 30', description: 'INTEREST PAID 92', status: 'Posted', account: 'ASW', amount: 4.25 },
+    { id: 'asw-2', date: 'Jul 24', description: 'SAVINGS REGULAR DEBIT', status: 'Posted', account: 'ASW', amount: -4000.0 },
+    { id: 'asw-3', date: 'Jun 30', description: 'INTEREST PAID 91', status: 'Posted', account: 'ASW', amount: 6.4 },
+    { id: 'asw-4', date: 'May 5', description: 'TRANSFER FROM X5389 TO X6675', status: 'Posted', account: 'ASW', amount: 100.0 },
+    { id: 'asw-5', date: 'Apr 3', description: 'TRANSFER FROM X5389 TO X6675', status: 'Posted', account: 'ASW', amount: 100.0 },
+    { id: 'asw-6', date: 'Mar 31', description: 'INTEREST PAID 90', status: 'Posted', account: 'ASW', amount: 6.21 },
+    { id: 'asw-7', date: 'Dec 31, 2025', description: 'INTEREST PAID 92', status: 'Posted', account: 'ASW', amount: 6.35 },
+    { id: 'asw-8', date: 'Sep 30, 2025', description: 'INTEREST PAID 92', status: 'Posted', account: 'ASW', amount: 6.34 },
+    { id: 'asw-9', date: 'Jun 30, 2025', description: 'INTEREST PAID 91', status: 'Posted', account: 'ASW', amount: 5.41 },
+    { id: 'asw-10', date: 'Apr 21, 2025', description: 'SAVINGS REGULAR DEPOSIT', status: 'Posted', account: 'ASW', amount: 5000.0 },
+    { id: 'asw-11', date: 'Mar 31, 2025', description: 'INTEREST PAID 90', status: 'Posted', account: 'ASW', amount: 5.08 },
+  ],
+  now: [
+    { id: 'now-1', date: 'Oct 5', description: 'Refund from CNB Main branch', status: 'Posted', account: 'NOW ACCT 5389', amount: 10000.0 },
+    { id: 'now-2', date: 'Oct 2', description: 'KO STORAGE NAPLE 4305629793 ACH EOD PROCESSI...', status: 'Pending', account: 'NOW ACCT 5389', amount: -261.0 },
+    { id: 'now-3', date: 'Oct 2', description: 'DDA PAY FIRST ITEM', status: 'Posted', account: 'NOW ACCT 5389', amount: -5500.0 },
+    { id: 'now-4', date: 'Oct 2', description: 'WIRE TRANSFER TO LUIS GREGORIO SUAREZ', status: 'Posted', account: 'NOW ACCT 5389', amount: -3990.0 },
+    { id: 'now-5', date: 'Oct 2', description: 'WIRE TRANSFER FEE', status: 'Posted', account: 'NOW ACCT 5389', amount: -20.0 },
+    { id: 'now-6', date: 'Sep 30', description: 'INTEREST PAID 30', status: 'Posted', account: 'NOW ACCT 5389', amount: 69.57 },
+    { id: 'now-7', date: 'Sep 29', description: "New York State Teachers' Retirement System", status: 'Posted', account: 'NOW ACCT 5389', amount: 1533.92 },
+    { id: 'now-8', date: 'Sep 29', description: 'DDA INC CLEAR CHECK | SERIAL 8461', status: 'Posted', account: 'NOW ACCT 5389', amount: -125.0 },
+    { id: 'now-9', date: 'Sep 25', description: 'DDA INC CLEAR CHECK | SERIAL 8459', status: 'Posted', account: 'NOW ACCT 5389', amount: -50.0 },
+    { id: 'now-10', date: 'Sep 23', description: 'Walmart', status: 'Posted', account: 'NOW ACCT 5389', amount: -68.55 },
+    { id: 'now-11', date: 'Sep 24', description: 'American Electric Power', status: 'Posted', account: 'NOW ACCT 5389', amount: -50.0 },
+    { id: 'now-12', date: 'Sep 22', description: 'DDA INC CLEAR CHECK | SERIAL 8457', status: 'Posted', account: 'NOW ACCT 5389', amount: -101.86 },
+  ],
   kew: [
     { id: 'kew-1', date: 'Sep 30', description: 'INTEREST PAID 92', status: 'Posted', account: 'KEW', amount: 65.52 },
     { id: 'kew-2', date: 'Jun 30', description: 'INTEREST PAID 91', status: 'Posted', account: 'KEW', amount: 64.68 },
