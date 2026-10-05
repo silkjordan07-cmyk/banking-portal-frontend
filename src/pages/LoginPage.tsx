@@ -13,8 +13,13 @@ export default function LoginPage({ onNavigate }: LoginPageProps) {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col login-landscape">
-      <div className="flex-1 flex items-center justify-center px-4 py-10 sm:py-16 lg:justify-end lg:pr-[12%]">
+    <div
+  className="min-h-screen flex flex-col bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: "url('/images/s7.png')",
+  }}
+>
+      <div className="flex-1 flex items-center justify-center px-4 py-10 sm:py-16">
         <div className="w-full max-w-[370px] animate-fade-in-up">
           <div className="bg-white/95 backdrop-blur-sm rounded-md shadow-2xl border border-white/70 overflow-hidden">
             <div className="flex justify-center px-6 pt-6">
