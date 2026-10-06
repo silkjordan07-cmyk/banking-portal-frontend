@@ -47,7 +47,7 @@ export const accounts: Account[] = [
   { id: 'asw', name: 'ASW', number: 'x6675', balance: 4615.6 },
   { id: 'jdw', name: 'JDW', number: 'x6072', balance: 11007.52 },
   { id: 'kew', name: 'KEW', number: 'x2487', balance: 86712.61 },
-  { id: 'now', name: 'NOW ACCT 5389', number: 'x5389', balance: 254479.82, isPrimary: true }
+  { id: 'now', name: 'NOW ACCT 5389', number: 'x5389', balance: 254479.82, isPrimary: true },
   { id: 'play', name: 'Play', number: 'x6592', balance: 23895.42 },
   { id: 'yellow', name: 'Yellow', number: 'x6212', balance: 5519.26 },
 ];

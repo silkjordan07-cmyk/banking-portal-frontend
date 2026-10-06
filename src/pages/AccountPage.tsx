@@ -58,8 +58,8 @@ export default function AccountPage({ accountId, onNavigate }: AccountPageProps)
           </div>
         </div>
       </main>
+      {selectedTransaction && <TransactionDetailsModal transaction={selectedTransaction} onClose={() => setSelectedTransaction(null)} />}
     </PortalShell>
-    {selectedTransaction && <TransactionDetailsModal transaction={selectedTransaction} onClose={() => setSelectedTransaction(null)} />}
   );
 }
 

@@ -76,7 +76,7 @@ export default function DashboardPage({ onNavigate, onOpenAccount }: DashboardPa
               <div className="divide-y divide-navy-50">
                 {transactions.map((transaction) => {
                   const positive = transaction.amount > 0;
-                  return <button key={transaction.id} onClick={() => setSelectedTransaction(transaction)} className="flex w-full items-center gap-3 px-4 py-3 text-left hover:bg-blue-50/60"><div className={`flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full ${positive ? 'bg-success-50 text-success-600' : 'bg-blue-50 text-blue-600'}`}>{positive ? <ArrowDownRight className="h-3.5 w-3.5" /> : <ArrowUpRight className="h-3.5 w-3.5" />}</div><div className="min-w-0 flex-1"><div className="truncate text-[11px] font-semibold text-navy-900">{transaction.description}</div><div className="mt-0.5 flex items-center gap-1.5 text-[9px] text-navy-400"><span>{transaction.date}</span><span>·</span><span>{transaction.account}</span>{transaction.status === 'Pending' && <span className="inline-flex items-center gap-1 rounded bg-warning-50 px-1 text-[8px] font-semibold text-warning-600"><Clock className="h-2.5 w-2.5" />Pending</span>}</div></div><div className={`text-[11px] font-bold ${positive ? 'text-success-600' : 'text-navy-900'}`}>{positive ? '+' : ''}{formatCurrency(transaction.amount)}</div></div></button>;
+                  return <button key={transaction.id} onClick={() => setSelectedTransaction(transaction)} className="flex w-full items-center gap-3 px-4 py-3 text-left hover:bg-blue-50/60"><div className={`flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full ${positive ? 'bg-success-50 text-success-600' : 'bg-blue-50 text-blue-600'}`}>{positive ? <ArrowDownRight className="h-3.5 w-3.5" /> : <ArrowUpRight className="h-3.5 w-3.5" />}</div><div className="min-w-0 flex-1"><div className="truncate text-[11px] font-semibold text-navy-900">{transaction.description}</div><div className="mt-0.5 flex items-center gap-1.5 text-[9px] text-navy-400"><span>{transaction.date}</span><span>·</span><span>{transaction.account}</span>{transaction.status === 'Pending' && <span className="inline-flex items-center gap-1 rounded bg-warning-50 px-1 text-[8px] font-semibold text-warning-600"><Clock className="h-2.5 w-2.5" />Pending</span>}</div></div><div className={`text-[11px] font-bold ${positive ? 'text-success-600' : 'text-navy-900'}`}>{positive ? '+' : ''}{formatCurrency(transaction.amount)}</div></button>;
                 })}
               </div>
               <button className="flex w-full items-center justify-center gap-1 border-t border-navy-50 py-3 text-[10px] font-semibold text-blue-700 hover:bg-blue-50">See more <ChevronRight className="h-3 w-3" /></button>
@@ -89,7 +89,7 @@ export default function DashboardPage({ onNavigate, onOpenAccount }: DashboardPa
           </section>
         </div>
       </main>
+      {selectedTransaction && <TransactionDetailsModal transaction={selectedTransaction} onClose={() => setSelectedTransaction(null)} />}
     </PortalShell>
-    {selectedTransaction && <TransactionDetailsModal transaction={selectedTransaction} onClose={() => setSelectedTransaction(null)} />}
   );
 }
