@@ -15,6 +15,10 @@ export interface Transaction {
   status: 'Pending' | 'Posted';
   account: string;
   amount: number;
+  detailDate?: string;
+  category?: string;
+  metadata?: string;
+  similarTransactions?: string[];
 }
 
 export interface AccountDetail {
@@ -43,7 +47,7 @@ export const accounts: Account[] = [
   { id: 'asw', name: 'ASW', number: 'x6675', balance: 4615.6 },
   { id: 'jdw', name: 'JDW', number: 'x6072', balance: 11007.52 },
   { id: 'kew', name: 'KEW', number: 'x2487', balance: 86712.61 },
-  { id: 'now', name: 'NOW ACCT 5389', number: 'x5389', balance: 335123.63, isPrimary: true }, // Updated balance (+50,000)
+  { id: 'now', name: 'NOW ACCT 5389', number: 'x5389', balance: 254479.82, isPrimary: true }
   { id: 'play', name: 'Play', number: 'x6592', balance: 23895.42 },
   { id: 'yellow', name: 'Yellow', number: 'x6212', balance: 5519.26 },
 ];
@@ -139,13 +143,11 @@ export const accountDetails: AccountDetail[] = [
 ];
 
 export const transactions: Transaction[] = [
-  { id: '7', date: 'Oct 5', description: 'Payment For Goods And Services', status: 'Posted', account: 'NOW ACCT 5389', amount: 50000.0 }, // Added Refund transaction
-  { id: '6', date: 'Oct 5', description: 'Refund from CNB Main branch', status: 'Posted', account: 'NOW ACCT 5389', amount: 10000.0 },
-  { id: '1', date: 'Oct 2', description: 'KO STORAGE NAPLE 4305629793 ACH EOD PR...', status: 'Pending', account: 'NOW ACCT 5389', amount: -261.0 },
-  { id: '2', date: 'Oct 2', description: 'DDA PAY FIRST ITEM', status: 'Posted', account: 'NOW ACCT 5389', amount: -5500.0 },
-  { id: '3', date: 'Oct 2', description: 'WIRE TRANSFER TO LUIS GREGORIO SUAREZ', status: 'Posted', account: 'NOW ACCT 5389', amount: -3990.0 },
-  { id: '4', date: 'Oct 2', description: 'WIRE TRANSFER FEE', status: 'Posted', account: 'NOW ACCT 5389', amount: -20.0 },
-  { id: '5', date: 'Sep 30', description: 'INTEREST PAID 30', status: 'Posted', account: 'NOW ACCT 5389', amount: 69.57 },
+  { id: 'now-chase', date: 'Oct 6', detailDate: '10/6/2026', description: 'CHASE CREDIT CRD CHECK PYMT ACH PROCESSING', status: 'Pending', account: 'NOW ACCT 5389', amount: 103.81 },
+  { id: 'now-spring', date: 'Oct 5', detailDate: '10/5/2026', description: 'Spring Market', status: 'Posted', account: 'NOW ACCT 5389', amount: 500.0, category: 'Banking', metadata: 'ORIG/CHECK SPRING MARKET', similarTransactions: ['$261.00', '$261.00', '$261.00', '$261.00'] },
+  { id: 'now-ko', date: 'Oct 5', detailDate: '10/5/2026', description: 'KO Storage', status: 'Posted', account: 'NOW ACCT 5389', amount: 261.0, category: 'Home', similarTransactions: ['$261.00', '$261.00', '$261.00', '$261.00'] },
+  { id: 'now-boundless', date: 'Oct 5', detailDate: '10/5/2026', description: 'WIRE TRANSFER TO BOUNDLESS TECHNOLOGY INC', status: 'Posted', account: 'NOW ACCT 5389', amount: 10000.0, category: 'General' },
+  { id: 'now-antonio', date: 'Oct 5', detailDate: '10/5/2026', description: 'WIRE TRANSFER TO ANTONIO JOSE RUIZ LLC', status: 'Posted', account: 'NOW ACCT 5389', amount: 10000.0, category: 'General' },
 ];
 
 export const accountTransactions: Record<string, Transaction[]> = {
@@ -163,19 +165,11 @@ export const accountTransactions: Record<string, Transaction[]> = {
     { id: 'asw-11', date: 'Mar 31, 2025', description: 'INTEREST PAID 90', status: 'Posted', account: 'ASW', amount: 5.08 },
   ],
   now: [
-    { id: '7', date: 'Oct 5', description: 'Refund', status: 'Posted', account: 'NOW ACCT 5389', amount: 50000.0 }, // Added Refund transaction here too
-    { id: 'now-1', date: 'Oct 5', description: 'Refund from CNB Main branch', status: 'Posted', account: 'NOW ACCT 5389', amount: 10000.0 },
-    { id: 'now-2', date: 'Oct 2', description: 'KO STORAGE NAPLE 4305629793 ACH EOD PROCESSI...', status: 'Pending', account: 'NOW ACCT 5389', amount: -261.0 },
-    { id: 'now-3', date: 'Oct 2', description: 'DDA PAY FIRST ITEM', status: 'Posted', account: 'NOW ACCT 5389', amount: -5500.0 },
-    { id: 'now-4', date: 'Oct 2', description: 'WIRE TRANSFER TO LUIS GREGORIO SUAREZ', status: 'Posted', account: 'NOW ACCT 5389', amount: -3990.0 },
-    { id: 'now-5', date: 'Oct 2', description: 'WIRE TRANSFER FEE', status: 'Posted', account: 'NOW ACCT 5389', amount: -20.0 },
-    { id: 'now-6', date: 'Sep 30', description: 'INTEREST PAID 30', status: 'Posted', account: 'NOW ACCT 5389', amount: 69.57 },
-    { id: 'now-7', date: 'Sep 29', description: "New York State Teachers' Retirement System", status: 'Posted', account: 'NOW ACCT 5389', amount: 1533.92 },
-    { id: 'now-8', date: 'Sep 29', description: 'DDA INC CLEAR CHECK | SERIAL 8461', status: 'Posted', account: 'NOW ACCT 5389', amount: -125.0 },
-    { id: 'now-9', date: 'Sep 25', description: 'DDA INC CLEAR CHECK | SERIAL 8459', status: 'Posted', account: 'NOW ACCT 5389', amount: -50.0 },
-    { id: 'now-10', date: 'Sep 23', description: 'Walmart', status: 'Posted', account: 'NOW ACCT 5389', amount: -68.55 },
-    { id: 'now-11', date: 'Sep 24', description: 'American Electric Power', status: 'Posted', account: 'NOW ACCT 5389', amount: -50.0 },
-    { id: 'now-12', date: 'Sep 22', description: 'DDA INC CLEAR CHECK | SERIAL 8457', status: 'Posted', account: 'NOW ACCT 5389', amount: -101.86 },
+    { id: 'now-chase', date: 'Oct 6', detailDate: '10/6/2026', description: 'CHASE CREDIT CRD CHECK PYMT ACH PROCESSING', status: 'Pending', account: 'NOW ACCT 5389', amount: 103.81 },
+    { id: 'now-spring', date: 'Oct 5', detailDate: '10/5/2026', description: 'Spring Market', status: 'Posted', account: 'NOW ACCT 5389', amount: 500.0, category: 'Banking', metadata: 'ORIG/CHECK SPRING MARKET', similarTransactions: ['$261.00', '$261.00', '$261.00', '$261.00'] },
+    { id: 'now-ko', date: 'Oct 5', detailDate: '10/5/2026', description: 'KO Storage', status: 'Posted', account: 'NOW ACCT 5389', amount: 261.0, category: 'Home', similarTransactions: ['$261.00', '$261.00', '$261.00', '$261.00'] },
+    { id: 'now-boundless', date: 'Oct 5', detailDate: '10/5/2026', description: 'WIRE TRANSFER TO BOUNDLESS TECHNOLOGY INC', status: 'Posted', account: 'NOW ACCT 5389', amount: 10000.0, category: 'General' },
+    { id: 'now-antonio', date: 'Oct 5', detailDate: '10/5/2026', description: 'WIRE TRANSFER TO ANTONIO JOSE RUIZ LLC', status: 'Posted', account: 'NOW ACCT 5389', amount: 10000.0, category: 'General' },
   ],
   kew: [
     { id: 'kew-1', date: 'Sep 30', description: 'INTEREST PAID 92', status: 'Posted', account: 'KEW', amount: 65.52 },
